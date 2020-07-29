@@ -49,7 +49,13 @@ zookeeper提供的命名空间和标准的文件系统非常像。命名空间�
 
 zookeeper具有层级结构的命名空间
 
-![ZooKeeper's Hierarchical Namespace](/Users/hzh/Desktop/github_markdown_repo/zookeeper-doc/zknamespace.png)
+![](https://zookeeper.apache.org/doc/r3.6.1/images/zknamespace.jpg)
+
+**节点和临时节点**
+
+和标准的文件系统不一样的是，zookeeper的命名空间中的每个节点可以存储和该节点及其子节点相关的数据。这就像拥有一个允许文件也是目录的文件系统一样。（zookeeper被设计用来存储协调数据：状态信息，配置，寻址信息等，所以每个节点存储的数据通常来说是轻量的，在b（字节）到kb（千字节）的范围。）我们把正在谈论的zookeeper数据节点叫做znode。
+
+znode维护了一个状态结构，它包含用于记录数据变更，访问控制列表变更和时间戳的版本号，通过这个状态结构可以实现缓存校验和协调更新。每当一个znode的数据变更了,这个版本号就会增大。例如，客户端无论何时检索数据，客户端也会收到数据的版本号。
 
 # 开发者
 
