@@ -45,7 +45,11 @@ Zookeeper的实现非常重视高性能，高可用，严格的顺序访问。�
 
 ### 数据模型和分层的命名空间
 
+zookeeper提供的命名空间和标准的文件系统非常像。命名空间由一系列被斜线分隔的路径组成。zookeeper的命名空间中的每个节点用一个路径标识。
 
+zookeeper具有层级结构的命名空间
+
+![ZooKeeper's Hierarchical Namespace](/Users/hzh/Desktop/github_markdown_repo/zookeeper-doc/zknamespace.png)
 
 # 开发者
 
